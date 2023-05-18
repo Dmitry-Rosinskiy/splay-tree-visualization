@@ -1,5 +1,5 @@
 import { clearCanvas } from './draw_functions.js'
-import SplayTree from './splay_tree.js'
+import SplayTree from './tree.js'
 
 document.getElementById('number').addEventListener('input', onInputNumber)
 
@@ -44,6 +44,7 @@ function disableAll() {
     document.getElementById('insert').disabled = true
     document.getElementById('find').disabled = true
     document.getElementById('delete').disabled = true
+    document.getElementById('create').disabled = true
 
     document.getElementById('splay').disabled = true
     document.getElementById('zig').disabled = true
@@ -57,6 +58,7 @@ function enableAll() {
     document.getElementById('insert').disabled = false
     document.getElementById('find').disabled = false
     document.getElementById('delete').disabled = false
+    document.getElementById('create').disabled = false
 
     document.getElementById('splay').disabled = false
     document.getElementById('zig').disabled = false
