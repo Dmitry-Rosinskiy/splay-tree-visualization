@@ -1,5 +1,5 @@
 import { clearCanvas } from './draw_functions.js'
-import SplayTree from './tree.js'
+import SplayTree from './splay_tree.js'
 
 document.getElementById('number').addEventListener('input', onInputNumber)
 
