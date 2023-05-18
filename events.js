@@ -34,8 +34,6 @@ const ctx = canvas.getContext('2d')
 
 let scaleValue = 1
 
-const resetButton = document.getElementById('reset')
-
 const extraNumberInput = document.getElementById('extra_number')
 
 const tree = new SplayTree()
@@ -172,11 +170,9 @@ function onClickAnimationButton() {
 }
 
 function onInputSpeedRange() {
-    resetButton.disabled = false
 }
 
 function onInputScaleRange() {
-    resetButton.disabled = false
     ctx.scale(scale.value / (scaleValue * 100), scale.value / (scaleValue * 100))
     scaleValue = scaleValue * (scale.value / (scaleValue * 100))
     tree.drawAll()
