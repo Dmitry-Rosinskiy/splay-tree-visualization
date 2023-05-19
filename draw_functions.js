@@ -1,6 +1,7 @@
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
 
+// Получение RGB-значения цвета по его названию
 function getRGB(color) {
     switch(color) {
         case undefined:
@@ -22,6 +23,7 @@ function getRGB(color) {
     }
 }
 
+// Рисование окружности заданного цвета (RGB)
 function drawRGBCircle(x, y, r, rgb) {
     ctx.beginPath()
     ctx.strokeStyle = rgb
@@ -32,11 +34,13 @@ function drawRGBCircle(x, y, r, rgb) {
     ctx.fill()
 }
 
+// Рисование окружности заданного цвета (название)
 function drawCircle(x, y, r, color) {
     const rgb = getRGB(color)
     drawRGBCircle(x, y, r, rgb)
 }
 
+// Рисование текста заданного цвета (RGB)
 function drawRGBText(text, x, y, rgb) {
     ctx.beginPath()
     ctx.fillStyle = rgb
@@ -45,11 +49,13 @@ function drawRGBText(text, x, y, rgb) {
     ctx.fillText(text, x, y)
 }
 
+// Рисование текста заданного цвета (название)
 function drawText(text, x, y, color) {
     const rgb = getRGB(color)
     drawRGBText(text, x, y, rgb)
 }
 
+// Рисование отрезка
 function drawLine(x1, y1, x2, y2) {
     ctx.beginPath()
     ctx.strokeStyle = 'black'
@@ -59,6 +65,7 @@ function drawLine(x1, y1, x2, y2) {
     ctx.stroke()
 }
 
+// Рисование правой округлённой стрелки заданного цвета (RGB)
 function drawRGBRightCurvedArrow(x, y, rgb) {
     const r = 40
     const arrowWidth = 10
@@ -81,11 +88,13 @@ function drawRGBRightCurvedArrow(x, y, rgb) {
     ctx.fill()
 }
 
+// Рисование правой округлённой стрелки заданного цвета (название)
 function drawRightCurvedArrow(x, y, color) {
     const rgb = getRGB(color)
     drawRGBRightCurvedArrow(x, y, rgb)
 }
 
+// Рисование левой округлённой стрелки заданного цвета (RGB)
 function drawRGBLeftCurvedArrow(x, y, rgb) {
     const r = 40
     const arrowWidth = 10
@@ -108,23 +117,28 @@ function drawRGBLeftCurvedArrow(x, y, rgb) {
     ctx.fill()
 }
 
+// Рисование левой округлённой стрелки заданного цвета (название)
 function drawLeftCurvedArrow(x, y, color) {
     const rgb = getRGB(color)
     drawRGBLeftCurvedArrow(x, y, rgb)
 }
 
+// Очищение холста
 function clearCanvas() {
     ctx.clearRect(-1000000, -1000000, 2000000, 2000000)
 }
 
+// Очищение изображения splay-дерева
 function clearTree() {
     ctx.clearRect(-1000000, 90, 2000000, 2000000)
 }
 
+// Очищение правой части для текста на холсте
 function clearRightTextArea() {
     ctx.clearRect(canvas.width * 1 / 2, 0, canvas.width * 1 / 2, 90)
 }
 
+// Очищение левой части для текста на холсте
 function clearLeftTextArea() {
     ctx.clearRect(0, 0, canvas.width * 1 / 2, 90)
 }

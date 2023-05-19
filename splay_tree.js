@@ -12,12 +12,14 @@ import {
 const canvas = document.getElementById('canvas')
 const speed = document.getElementById('speed')
 
+// Параметры изображения splay-дерева
 const rootLevel = 120
 const textLevel = 50
 const rootCenter = canvas.width / 2
 const nodeSize = 20
 const levelHeight = 80
 
+// Параметры изображения текста на холсте
 const xLeftText1 = canvas.width * 1 / 6
 const xLeftText2 = canvas.width * 2 / 6
 const xRightText1 = canvas.width * 4 / 6
@@ -25,6 +27,7 @@ const xRightText2 = canvas.width * 5 / 6
 
 const infinity = 1000000000
 
+// Текст сообщений
 const foundMessage = 'найдено'
 const notFoundMessage = 'не найдено'
 const insertedMessage = 'вставлено'
@@ -32,6 +35,7 @@ const notInsertedMessage = 'не вставлено'
 const deletedMessage = 'удалено'
 const notDeletedMessage = 'не удалено'
 
+// Цвета визуализации
 const nodeColor = 'light-blue'
 const seekColor = 'green'
 const splayColor = 'blue'
@@ -49,12 +53,14 @@ const deleteNodeColor = 'red'
 const deletedColor = 'green'
 const notDeletedColor = 'red'
 
+// Прототип splay-дерева
 export default class SplayTree {
     constructor() {
         this.root = null
         this.animationOn = true
     }
 
+    // Задержка
     async delay() {
         if (this.animationOn) {
             return new Promise(resolve => {setTimeout(() => resolve(''), -speed.value * 20)})
@@ -62,6 +68,7 @@ export default class SplayTree {
         return 
     }
 
+    // Правый поворот
     rotateRight(node) {
         if (node.parent !== null) {
 
@@ -97,6 +104,7 @@ export default class SplayTree {
         }
     }
 
+    // Левый поворот
     rotateLeft(node) {
         if (node.parent !== null) {
 
@@ -132,14 +140,17 @@ export default class SplayTree {
         }
     }
 
+    // Проверка, является ли вершина левым ребёнком
     isLeftChild(node) {
         return node.parent.left === node
     }
 
+    // Проверка, является ли вершина правым ребёнком
     isRightChild(node) {
         return node.parent.right === node
     }
 
+    // Поиск ключа как в обычном дереве поиска
     async seek(value, startNode = this.root) {
         if (startNode === null) {
             return {found: false, node: null}
@@ -198,6 +209,7 @@ export default class SplayTree {
         return seekInfo
     }
 
+    // Zig-операция
     async zig(node) {
         if (node === this.root) {
             return
@@ -230,6 +242,7 @@ export default class SplayTree {
         this.drawAll()
     }
 
+    // Zig-zig операция
     async zigzig(node) {
         if (node === this.root || node.parent === this.root) {
             return
@@ -284,6 +297,7 @@ export default class SplayTree {
         this.drawAll()
     }
 
+    // Zig-zag операция
     async zigzag(node) {
         if (node === this.root || node.parent === this.root) {
             return
@@ -338,6 +352,7 @@ export default class SplayTree {
         this.drawAll()
     }
 
+    // Splay-операция
     async splay(node) {
         this.markedNode = node
         this.markedColor = splayColor
@@ -364,6 +379,7 @@ export default class SplayTree {
        this.drawAll()
     }
 
+    // Слияние двух splay-деревьев
     async merge(tree1, tree2) {
         this.leftText2 = 'Merge'
         this.leftText2Color = mergeColor
@@ -416,6 +432,7 @@ export default class SplayTree {
         this.drawAll()
     }
 
+    // Вставка ключа
     async insert(value) {
         this.leftText1 = 'Insert (' + value + ')'
         delete this.leftText1Color
@@ -474,6 +491,7 @@ export default class SplayTree {
         this.drawAll()
     }
 
+    // Поиск ключа
     async find(value) {
         this.leftText1 = 'Find' + '(' + value + ')'
         delete this.leftText1Color
@@ -517,6 +535,7 @@ export default class SplayTree {
         this.drawAll()
     }
 
+    // Удаление ключа
     async delete(value) {
         this.leftText1 = 'Delete' + '(' + value + ')'
         delete this.leftText1Color
@@ -582,6 +601,7 @@ export default class SplayTree {
         this.drawAll()
     }
 
+    // Создание splay-дерева
     async create() {
         const minNodeCount = 10
         const maxNodeCount = 20
@@ -602,6 +622,7 @@ export default class SplayTree {
         this.drawAll()
     }
 
+    // Получение информации о номере вершины при обходе splay-дерева
     order(node, orderInfo, startNode = this.root) {
         if (startNode.left !== null) {
             this.order(node, orderInfo, startNode.left, )
@@ -622,6 +643,7 @@ export default class SplayTree {
         }
     }
 
+    // Рисование splay-дерева
     drawTree(node = this.root, y = rootLevel) {
         if (node === this.root) {
             clearTree()
@@ -685,6 +707,7 @@ export default class SplayTree {
         }
     }
 
+    // Рисование вспомогательного текста для операций
     drawTexts() {
         clearLeftTextArea()
         clearRightTextArea()
@@ -702,11 +725,13 @@ export default class SplayTree {
         }
     }
 
+    // Рисование splay-дерева и вспомогательного текста для операций
     drawAll() {
         this.drawTree()
         this.drawTexts()
     }
 
+    // Очистка (удаление) splay-дерева
     clear() {
         this.root = null
     }
