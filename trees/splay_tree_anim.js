@@ -53,7 +53,7 @@ const deleteNodeColor = 'red'
 const deletedColor = 'green'
 const notDeletedColor = 'red'
 
-// Прототип splay-дерева
+// Прототип splay-дерева для визуализации
 export default class SplayTreeAnimation  {
 constructor() {
     this.root = null

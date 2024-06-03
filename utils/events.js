@@ -18,7 +18,6 @@ document.getElementById('canvas').addEventListener('mousemove', onMouseMoveCanva
 
 document.getElementById('animation').addEventListener('click', onClickAnimationButton)
 document.getElementById('pause').addEventListener('click', onClickPauseButton)
-document.getElementById('speed').addEventListener('input', onInputSpeedRange)
 document.getElementById('scale').addEventListener('input', onInputScaleRange)
 document.getElementById('show_extra').addEventListener('click', onClickShowExtraCheckbox)
 
@@ -51,7 +50,6 @@ const extraNumberInput = document.getElementById('extra_number')
 
 // Объект splay-дерева
 const treeManager = new SplayTreeManager()
-// Объект менеджера сравнений деревьев
 const comparisonManager = new ComparisonManager()
 
 // Дезактивация всех кнопок формы
@@ -198,6 +196,7 @@ function onMouseMoveCanvas(event) {
             ctx.translate(dx, dy)
             treeManager.drawAll()
         }, 50)
+        
     }
 }
 
@@ -309,7 +308,7 @@ async function onClickZigZagButton() {
     enableAll()
 }
 
-// Обработчик ввода в текстовое поле для сравнения с AVL-деревом
+// Обработчик ввода в текстовое поле для сравнения с АВЛ-деревом
 function onInputAVLNumber() {
     const digitList = '0123456789'
     const value = numberAVLInput.value
@@ -330,7 +329,7 @@ function onInputAVLNumber() {
     }
 }
 
-// Обработчик нажатия кнопки для сравнения с АВЛ-деревом
+// Обработчик кнопки для сравнения с АВЛ-деревом
 async function onClickAVLButton() {
     if (numberAVLInput.value === '') {
         return
