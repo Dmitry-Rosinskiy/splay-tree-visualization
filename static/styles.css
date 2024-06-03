@@ -112,6 +112,28 @@ body {
     border-color: #333;
 }
 
+.pause_button {
+    width: 50px;
+    margin: 10px;
+    background-color: #eee;
+    padding: 5px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    font-size: 20px;
+    line-height: 15px;
+}
+
+.pause_button:hover {
+    background-color: #ddd;
+    border-color: #555;
+    cursor: pointer;
+}
+
+.pause_button:active {
+    background-color: #bbb;
+    border-color: #333;
+}
+
 #canvas {
     width: 80%;
     background-color: #fff;
@@ -154,6 +176,82 @@ body {
     text-align: center;
     line-height: 50px;
     margin: 0px 10px
+}
+
+.comparison {
+    visibility: hidden;
+    width: 80%;
+    margin: 0px 10%;
+    background-color: #2e8b57;
+    display: flex;
+    justify-content: flex-start;
+    border: 2px solid rgb(37, 200, 82);
+    border-top: 0;
+}
+
+.comparison_label {
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 50px;
+    margin: 0px 10px
+}
+
+.comparison_number {
+    height: 26px;
+}
+
+.comparison_button {
+    margin: 10px;
+    height: 30px;
+    background-color: #eee;
+    padding: 5px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    font-size: 14px;
+    min-width: 200px;
+}
+
+.comparison_button:hover {
+    background-color: #ddd;
+    border-color: #555;
+    cursor: pointer;
+}
+
+.comparison_button:active {
+    background-color: #bbb;
+    border-color: #333;
+}
+
+.comparison_table {
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 50%;
+    background-color: lightgrey;
+}
+
+.comparison_table th {
+    border: 2px solid black;
+    height: 50px;
+}
+
+.comparison_table tr {
+    border: 2px solid black;
+    height: 50px;
+}
+
+.comparison_table td {
+    border: 2px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+.comparison_table_column1 {
+    width: 60%;
+}
+
+.comparison_table_column2 {
+    width: 20%;
 }
 
 #footer {

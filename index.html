@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Splay-дерево</title>
-    <link rel="stylesheet" href="./static/styles.css">
-    <script type="module" src="./utils/events.js" defer></script>
+    <link rel="stylesheet" href="static/styles.css">
+    <script type="module" src="utils/events.js" defer></script>
 </head>
 <body>
     <div id="header">Splay-дерево</div>
@@ -22,6 +22,7 @@
     <canvas id="canvas" width="1344" height="550"></canvas>
     <div id="operations_bottom">
         <button id="animation" class="animation_button">Выключить анимацию</button>
+        <button id="pause" class="pause_button">⏸</button>
         <table class="slider">
             <tr align="center">
                 <td>
@@ -56,6 +57,86 @@
         <button id="zig" class="operation_button">Zig</button>
         <button id="zigzig" class="operation_button">Zig-zig</button>
         <button id="zigzag" class="operation_button">Zig-zag</button>
+    </div>
+    <div id="comparison_AVL" class="comparison">
+        <label id="comparison_label_AVL" for="comparison_number_AVL" class="comparison_label">Введите число операций:</label>
+        <input type="text" id="comparison_number_AVL" class="text_input comparison_number" maxlength="6">
+        <button id="AVL" class="comparison_button">Сравнить с АВЛ-деревом</button>
+        <table class="comparison_table">
+            <tr>
+                <th id="header_AVL" class="comparison_table_column1">
+                    Показатели
+                </th>
+                <th class="comparison_table_column2">
+                    Splay
+                </th>
+                <th class="comparison_table_column2">
+                    АВЛ
+                </th>
+            </tr>
+            <tr>
+                <td class="comparison_table_column1">
+                    Время, мс
+                </td>
+                <td id="time_splay_AVL" class="comparison_table_column2">
+
+                </td>
+                <td id="time_AVL" class="comparison_table_column2">
+
+                </td>
+            </tr>
+            <tr>
+                <td class="comparison_table_column1">
+                    Высота дерева
+                </td>
+                <td id="height_splay_AVL" class="comparison_table_column2">
+
+                </td>
+                <td id="height_AVL" class="comparison_table_column2">
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="comparison_RB" class="comparison">
+        <label id="comparison_label_RB" for="comparison_number_RB" class="comparison_label">Введите число операций:</label>
+        <input type="text" id="comparison_number_RB" class="text_input comparison_number" maxlength="6">
+        <button id="RB" class="comparison_button">Сравнить с КЧ-деревом</button>
+        <table class="comparison_table">
+            <tr>
+                <th id="header_RB" class="comparison_table_column1">
+                    Показатели
+                </th>
+                <th class="comparison_table_column2">
+                    Splay
+                </th>
+                <th class="comparison_table_column2">
+                    КЧ
+                </th>
+            </tr>
+            <tr>
+                <td class="comparison_table_column1">
+                    Время, мс
+                </td>
+                <td id="time_splay_RB" class="comparison_table_column2">
+
+                </td>
+                <td id="time_RB" class="comparison_table_column2">
+
+                </td>
+            </tr>
+            <tr>
+                <td class="comparison_table_column1">
+                    Высота дерева
+                </td>
+                <td id="height_splay_RB" class="comparison_table_column2">
+
+                </td>
+                <td id="height_RB" class="comparison_table_column2">
+
+                </td>
+            </tr>
+        </table>
     </div>
     <div id="footer">Узнать больше о splay-дереве: <a href="https://ru.wikipedia.org/wiki/Splay-%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE" target="_blank
         ">ссылка</a></div>
