@@ -1,5 +1,5 @@
-import { clearCanvas } from './draw_functions.js'
-import SplayTree from './splay_tree.js'
+import { clearCanvas } from '../utils/draw_functions.js'
+import SplayTree from '../trees/splay_tree.js'
 
 // Привязка элементов интерфейса к обработчикам их событий
 document.getElementById('number').addEventListener('input', onInputNumber)

@@ -7,7 +7,7 @@ import {
         clearTree,
         clearLeftTextArea,
         clearRightTextArea
-    } from './draw_functions.js'
+    } from '../utils/draw_functions.js'
 
 const canvas = document.getElementById('canvas')
 const speed = document.getElementById('speed')
